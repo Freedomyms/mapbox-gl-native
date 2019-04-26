@@ -57,7 +57,7 @@ public:
     bool hasRenderPass(RenderPass) const;
 
     // Checks whether this layer can be rendered.
-    bool needsRendering(float zoom) const;
+    bool needsRendering() const;
 
     virtual void render(PaintParameters&, RenderSource*) = 0;
 

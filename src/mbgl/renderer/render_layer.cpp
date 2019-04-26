@@ -28,11 +28,9 @@ bool RenderLayer::hasRenderPass(RenderPass pass) const {
     return bool(passes & pass);
 }
 
-bool RenderLayer::needsRendering(float zoom) const {
+bool RenderLayer::needsRendering() const {
     return passes != RenderPass::None
-           && baseImpl->visibility != style::VisibilityType::None
-           && baseImpl->minZoom <= zoom
-           && baseImpl->maxZoom >= zoom;
+           && baseImpl->visibility != style::VisibilityType::None;
 }
 
 void RenderLayer::setRenderTiles(RenderTiles tiles, const TransformState&) {
